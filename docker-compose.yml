@@ -1,0 +1,22 @@
+services:
+  file-browser-server:
+    restart: always
+    container_name: jielong-team-file-browser-server
+    build: .
+    ports:
+      - 3000:80
+    volumes:
+      - ./jielong-team-docs/docs:/srv
+      - /etc/filebrowser/database.db:/database.db
+  
+  docs:
+    restart: always
+    container_name: jielong-team-docs
+    image: node:20-alpine
+    command: "npm run dev"
+    working_dir: /app
+    ports:
+      - 8080:8080
+    volumes:
+      - ./jielong-team-docs:/app
+    

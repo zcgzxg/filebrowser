@@ -3,12 +3,11 @@
 _old
 rice-box.go
 .idea/
-/filebrowser
-/filebrowser.exe
-/dist
 
 .DS_Store
 node_modules
+.temp
+.cache
 
 # local env files
 .env.local
